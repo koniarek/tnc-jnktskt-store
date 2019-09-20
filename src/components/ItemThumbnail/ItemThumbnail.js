@@ -55,6 +55,7 @@ const ImgStyled = styled(Img)`
 `
 
 const Price = styled.h3`
+    color: ${props => props.theme.colors.primaryAccent};
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 40px;
