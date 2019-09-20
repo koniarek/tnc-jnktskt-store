@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All items" />
+        <SEO title="Wsszytko" />
       <ThumbnailsWrapper>
         {items.map(({ node }) => {
           const { title, image, price } = node.frontmatter
@@ -40,7 +40,7 @@ class BlogIndex extends React.Component {
           )
         })}
       </ThumbnailsWrapper>
-        
+
 
       </Layout>
     )

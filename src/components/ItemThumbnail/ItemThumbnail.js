@@ -11,7 +11,8 @@ const ItemThumbnailStyled = styled.div`
     align-items: center;
     justify-content: center;
     margin: 20px;
-    background: ${props => props.theme.colors.primaryAccent};
+    border: 4px solid ${props => props.theme.colors.secondaryAccent};
+    background: ${props => props.theme.colors.main};
 
     @media (max-width: 930px) {
         width: 250px;
@@ -24,6 +25,7 @@ const ItemThumbnailStyled = styled.div`
 
 const Heading = styled.h3`
     font-size: 1.3em;
+    color: ${props => props.theme.colors.primaryAccent};
     padding: 10px;
     font-weight: 900;
     text-align: center;
@@ -37,7 +39,6 @@ const LinkStyled = styled(Link)`
     width: 100%;
     box-shadow: none;
     text-decoration: none;
-    color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,8 +54,11 @@ const ImgStyled = styled(Img)`
       }
 `
 
-const Price = styled.p`
-    padding-bottom: 10px;
+const Price = styled.h3`
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
 `
 
 const itemThumbnail = (props) => {

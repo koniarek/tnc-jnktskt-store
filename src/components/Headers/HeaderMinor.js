@@ -10,12 +10,13 @@ const HeaderMinorStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     background: ${props => props.theme.colors.main};
-    margin: 20px 0;
+    color: ${props => props.theme.colors.primaryAccent};
     border: 4px solid ${props => props.theme.colors.secondaryAccent};
 
 `
 
-const ShopName = styled.h1`
+const ShopName = styled.h3`
+    logo: ${props => props.theme.colors.avatar};
     padding: 20px;
     font-family: Heebo, sans-serif;
     font-size: 2em;
@@ -23,6 +24,7 @@ const ShopName = styled.h1`
 `
 
 const LinkStyled = styled(Link)`
+    logo: ${props => props.theme.colors.avatar};
     box-shadow: none;
     text-decoration: none;
     color: inherit;
@@ -70,7 +72,7 @@ class HeaderMinor extends Component {
         window.Snipcart.unsubscribe('cart.closed');
         window.Snipcart.unsubscribe('cart.ready');
     }
-    
+
 
     render() {
         return (

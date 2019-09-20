@@ -10,13 +10,14 @@ const HeaderMainStyled = styled.div`
     padding-top: 20px;
 `
 
-const ShopName = styled.h1`
+const ShopName = styled.h3`
+    logo: ${props => props.theme.colors.avatar};
     background: ${props => props.theme.colors.main};
     padding: 20px;
     width: 50%;
     text-align: center;
+    color: ${props => props.theme.colors.primaryAccent};
     font-family: Heebo, sans-serif;
-    border: 4px solid ${props => props.theme.colors.secondaryAccent};
     font-size: 2.5em;
     font-weight: 900;
     @media (max-width: 600px) {
@@ -27,12 +28,13 @@ const ShopName = styled.h1`
 const LinkStyled = styled(Link)`
     box-shadow: none;
     text-decoration: none;
-    color: inherit;
+    color: ${props => props.theme.colors.primaryAccent};
 `
 
 const headerMain = (props) => {
     return (
         <HeaderMainStyled>
+          {props.avatar}
             <ShopName>
                 <LinkStyled to='/'>
                     {props.shopName}

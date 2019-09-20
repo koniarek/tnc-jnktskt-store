@@ -18,37 +18,69 @@ const ImgStyled = styled(Img)`
   height: 400px;
 `
 
-const Price = styled.p`
-  margin: 20px 0;
-  padding: 10px;
-  font-weight: 700;
-  background: ${props => props.theme.colors.primaryAccent};
-`
-const Description = styled.p`
-  margin: 20px 0;
-  padding: 10px;
-`
+const Description = styled.h3`
+    width: 350px;
+    flex-direction: column;
+    display: block;
+    line-height: 1.5;
+    width: 100%;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    color:  ${props => props.theme.colors.primaryAccent};
 
+`
+  const Price = styled.h3`                            
+      width: 350px;                                         
+      flex-direction: column;                               
+      display: block;                                       
+      line-height: 1.5;                                     
+      width: 100%;                                          
+      text-align: center;                                        
+      padding-top: 70px;                                    
+      padding-bottom: 70px;                                 
+      color:  ${props => props.theme.colors.primaryAccent};
+                                                                                       
+`
 const Dropdown = styled.select`
-  display: block;
-  padding: 10px;
-  margin: 10px 0;
-  background: ${props => props.theme.colors.secondaryAccent};
-  font-weight: 700;
-  border: none;
-  outline: none;
+    width: 350px;                                         
+    display: row;                                       
+    line-height: 1.5;                                     
+    text-align: center; 
+    item-align: center;
+    margin-left:100px;
+    margin-right: 100 px;  
+    margin-bottom: 100 px;                               
+    background: ${props => props.theme.colors.primaryAccent};
+    outline: ${props => props.theme.colors.thirdAccent};  
+                               
 `
 const DropdownOption = styled.option`
-  padding: 10px;
-  background: ${props => props.theme.colors.secondaryAccent};
-  font-weight: 700;
-  border: none;
-  outline: none;
+flex-direction: columm;
+line-height: 1.5;   
+background: ${props => props.theme.colors.primaryAccent};
+font-weight: 700;
+text-align: right;  
+outline: ${props => props.theme.colors.secondaryAccent};
 `
 
 const BuyButton = styled.button`
-  padding: 20px;
-  background: ${props => props.theme.colors.secondaryAccent};
+    flex-direction: columm;
+    display: flex;
+    justify-content: space-between;  
+    font-weight: 700;
+    align-items: center;  
+    text-align: center  
+    margin: 80px 20px;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    padding-right: 80px;
+    padding-left: 80px;    
+  background: ${props => props.theme.colors.primaryAccent};
+  border: ${props => props.theme.colors.secondaryAccent};
+  outline:${props => props.theme.colors.secondaryAccent};
   font-weight: 700;
 `
 
@@ -73,7 +105,7 @@ class Item extends React.Component {
   updatePrice = (basePrice, values) => {
     const selectedOption = values.find(option => option.name === this.state.selected)
     return (basePrice + selectedOption.priceChange).toFixed(2)
-    
+
   }
 
   render() {
@@ -85,7 +117,6 @@ class Item extends React.Component {
         <Heading>{item.frontmatter.title}</Heading>
 
         <ImgStyled fluid={item.frontmatter.image.childImageSharp.fluid} />
-
         <Price>£{this.updatePrice(item.frontmatter.price, item.frontmatter.customField.values)}</Price>
         <Description>{item.frontmatter.description}</Description>
         <Dropdown
@@ -106,7 +137,7 @@ class Item extends React.Component {
           data-item-custom1-name={item.frontmatter.customField ? item.frontmatter.customField.name : null}
           data-item-custom1-options={this.createString(item.frontmatter.customField.values)}
           data-item-custom1-value={this.state.selected}>
-          Add to basket
+          Dodaj do koszyka
         </BuyButton>
 
       </Layout>

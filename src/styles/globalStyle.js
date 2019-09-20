@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     figure, figcaption, footer, header, hgroup, 
     menu, nav, output, ruby, section, summary,
     time, mark, audio, video {
-       margin: 0;
+       margin: 10px;
        padding: 0;
        border: 0;
        font-size: 100%;
@@ -60,14 +60,15 @@ export const GlobalStyle = createGlobalStyle`
     }
     a {
       text-decoration: none;
-      color: inherit;
+      color: white;
     }
     p, h1, h2, h3, h4 {
       line-height: 1.5em;
     }
     button {
       display: inline-block;
-      border: none;
+      border: ${props => props.theme.colors.secondaryAccent}; 
+      outline:${props => props.theme.colors.secondaryAccent};  
       padding: 0;
       margin: 0;
       text-decoration: none;

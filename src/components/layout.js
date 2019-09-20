@@ -2,34 +2,34 @@ import React from "react";
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { GlobalStyle } from '../styles/globalStyle';
-
 import HeaderMain from './Headers/HeaderMain';
 import HeaderMinor from './Headers/HeaderMinor';
 
 
 const PageWrapper = styled.div`
+  background: ${props => props.theme.colors.main};
   width: 100%;
-  margin: 0 auto;
-  width: 90%;
-
 `
 
 const MainSection = styled.main`
-  margin: 30px 0;
+  background: ${props => props.theme.colors.main};
   width: 100%;
 `
 
 const FooterStyled = styled.footer`
+  background: ${props => props.theme.colors.main};
+  color: ${props => props.theme.colors.primaryAccent};
+  display: block;
+  line-height: 1.5;
   width: 100%;
-  padding: 20px;
-  text-align: right;
-
-  @media (max-width: 600px) {
-    text-align: center;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
   }
 `
+
 const ExternalLink = styled.a`
-  color: #c59fc5;
+  color: #882221;
 `
 
 
@@ -45,7 +45,7 @@ class Layout extends React.Component {
   render() {
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    const siteName = "Gwen's Cake Shop"
+    const siteName = "Junkietosekta.pl"
     let header
 
     if (location.pathname === rootPath) {
@@ -68,8 +68,9 @@ class Layout extends React.Component {
             {header}
             <MainSection>{children}</MainSection>
             <FooterStyled>
-              <strong>Gatsby Snipcart Starter
-           - Made by <ExternalLink href="https://www.issydennis.com/" target="_blank" rel="noopener noreferrer">Issy Dennis</ExternalLink>
+              <span>| millennium | 51 1160 2202 0000 0002 6070 5913 | tedoendoce | junkierap | sekta |</span>
+              <strong>
+           - Made by <ExternalLink href="https://www.skwebarchitecture.com/" target="_blank" rel="noopener noreferrer">Szymon Koniarek</ExternalLink>
               </strong>
             </FooterStyled>
           </PageWrapper>
